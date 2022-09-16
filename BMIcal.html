@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=<>, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript">
+        function calculateBmi(){
+            let weight= document.getElementById('weight').value
+            let height= document.getElementById('height').value
+
+            let bmi=(weight/(height*height)*703)
+            document.getElementById('heading').innerHTML="Your BMI is :"
+            document.getElementById('bmi-output').innerHTML=bmi
+            
+            if(bmi<=24.9)
+                document.getElementById('message').innerHTML="you are under weight"
+            else if(bmi<=29.9)
+            document.getElementById('message').innerHTML="you are a healthy weight"
+            else
+            document.getElementById('message').innerHTML="you are over weight"
+        }
+
+        function reload()
+        {
+            window.location.reload()
+        }
+    </script>
+</head>
+<body align="center">
+    <h2>BMI Calculator - Javascript</h2>
+
+    <label for="weight">Weight :</label>
+    <input id="weight"type="number"><br><br>
+
+    <label for="height">height : </label>
+    <input id="height" type="numbers"><br><br>
+    <button onclick='calculateBmi()'>Submit</button>
+    <button onclick='reload()'>Clear</button>
+
+    <p id='heading'></p>
+    <p id='bmi-output'><b></b></p>
+    <p id='message'></p>
+    
+</body>
+</html>
